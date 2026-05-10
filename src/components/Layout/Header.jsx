@@ -88,7 +88,7 @@ const Header = () => {
     ${
       location.pathname === link.path
         ? "text-secondary" // Active: Show gradient
-        : "text-theme-neutral-light hover:text-secondary-hover" // Inactive: Show solid color, gradient ONLY on hover
+        : "text-theme-neutral-light hover:text-theme-accent-light" // Inactive: Show solid color, gradient ONLY on hover
     }`}
             >
               {link.name}

@@ -7,7 +7,7 @@ const PageHero = ({
   bgImage,
   rightContent,
   extraLeftContent,
-  overlayClass = "bg-theme-black/90",
+  overlayClass = "bg-theme-black/70",
   leftCol = "md:col-span-6 lg:col-span-7",
   rightCol = "md:col-span-6 lg:col-span-5",
 }) => {
@@ -29,26 +29,26 @@ const PageHero = ({
         <Stagger
           className={`${leftCol} flex flex-col justify-center min-w-0 w-full overflow-hidden`}
         >
-          <StaggerItem className="flex items-center gap-3 mb-6">
+          <StaggerItem className="flex items-center mb-2">
             <span className="w-8 h-px bg-theme-accent shrink-0"></span>
-            <span className="text-secondary uppercase tracking-[0.2em] text-xs font-bold font-mono shrink-0">
+            <span className="text-secondary uppercase tracking-[0.2em] text-xs  ml-2 font-bold font-mono shrink-0">
               {data.subtitle}
             </span>
           </StaggerItem>
 
           <StaggerItem className="w-full">
-            <h1 className="mb-6 text-white text-4xl md:text-5xl lg:text-6xl leading-tight break-words">
+            <h1 className="mb-2 text-white text-4xl md:text-5xl lg:text-6xl leading-tight break-words">
               {data.title}{" "}
-              <span className="inline-block font-semibold text-secondary transition-all duration-300 hover:text-white">
+              <span className="inline-block font-semibold text-secondary transition-all duration-300 hover:text-theme-accent-light">
                 {data.highlight}
               </span>
             </h1>
           </StaggerItem>
 
-          {/* Conditionally render desc so Publication Hero looks clean */}
+          {/* Conditionally render desc */}
           {data.desc && (
             <StaggerItem className="w-full">
-              <p className="mt-8 max-w-xl text-gray-400 border-l-4 border-theme-accent pl-4 md:pl-6 md:text-base leading-relaxed break-words">
+              <p className="mt-4 max-w-xl text-gray-400 border-l-4 border-theme-accent-light pl-4 md:pl-6 md:text-base leading-relaxed break-words">
                 {data.desc}
               </p>
             </StaggerItem>

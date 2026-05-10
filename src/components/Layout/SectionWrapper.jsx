@@ -12,7 +12,7 @@ const SectionWrapper = ({
       className={`relative w-full bg-theme-black overflow-clip ${
         isHero
           ? "pt-32 pb-20 min-h-[80vh] md:min-h-screen flex items-center"
-          : "py-20 md:py-24"
+          : "py-8 md:py-12"
       } ${className}`}
     >
       {backgroundContent && backgroundContent}

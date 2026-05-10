@@ -34,23 +34,21 @@ const HomeHero = () => {
         FIXED: Changed container to grid on mobile (grid-cols-2) and flex on larger screens (sm:flex).
         This forces a 2x2 grid on mobile, and restores your justify-around line on tablet/desktop. 
       */}
-      <div className="grid grid-cols-2 sm:flex sm:flex-row justify-around items-center gap-y-8 gap-x-2 sm:gap-4 lg:gap-6 mt-8 border-b border-theme-neutral-muted pb-8 w-full">
+      <div className="grid grid-cols-2 sm:flex sm:flex-row justify-around items-center gap-y-8 gap-x-2 sm:gap-4 lg:gap-6 mt-6 border-b border-theme-neutral-muted pb-6 w-full">
         {/* Stat 1: Publications (Takes 1 column on mobile) */}
         <div className="flex flex-col items-center text-center w-full sm:w-fit">
-          <h3 className="text-secondary font-mono text-3xl md:text-4xl mb-1">
+          <h3 className="text-secondary font-mono mb-1">
             {pubData?.length || 0}
           </h3>
-          <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
+          <h4 className="text-secondary font-mono font-light text-center">
             Publications
           </h4>
         </div>
 
         {/* Stat 2: Accepted Proposals (Takes 1 column on mobile) */}
         <div className="flex flex-col items-center text-center w-full sm:w-fit">
-          <h3 className="text-secondary font-mono text-3xl md:text-4xl mb-1">
-            {totalProposals}
-          </h3>
-          <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
+          <h3 className="text-secondary font-mono mb-2">{totalProposals}</h3>
+          <h4 className="text-secondary font-mono font-light text-center">
             Accepted Proposals
           </h4>
         </div>
@@ -60,11 +58,9 @@ const HomeHero = () => {
             centering it beautifully under the top two! 
         */}
         <div className="flex flex-col items-center text-center col-span-2 sm:col-span-1 w-full sm:w-fit">
-          <h3 className="text-secondary font-mono text-3xl md:text-4xl mb-1">
-            {totalDays}
-          </h3>
-          <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
-            Days Awarded
+          <h3 className="text-secondary font-mono mb-1">{totalDays}</h3>
+          <h4 className="text-secondary font-mono font-light text-center">
+            Beamdays Awarded
           </h4>
         </div>
       </div>

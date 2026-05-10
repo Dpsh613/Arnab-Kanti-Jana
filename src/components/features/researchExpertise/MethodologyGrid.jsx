@@ -12,8 +12,8 @@ const FeatureCard = ({ item }) => {
         will happen here, but because we anchor the image to the bottom below, 
         it will look like a deliberate layout choice rather than a broken layout.
       */}
-      <div className="flex flex-col gap-4 mb-8">
-        <h3 className="text-secondary text-2xl md:text-3xl tracking-wide">
+      <div className="flex flex-col gap-2 mb-2">
+        <h3 className="text-secondary tracking-wide">
           <AutoSciText text={item.title} />
         </h3>
         <p className="text-theme-neutral-light leading-relaxed text-base md:text-lg m-0 font-light text-left md:text-justify">
@@ -60,14 +60,16 @@ const MethodologyGrid = ({ title, data }) => {
       <SectionHeader title={title} />
 
       <div className="relative w-full mt-12 md:mt-20">
-        {/* 
-          SUBTLE VERTICAL DIVIDER
-          - Shorter (20% height) so it acts as a subtle visual cue, not a rigid pole.
-          - Positioned perfectly in the center.
-          - Fades in and out smoothly.
-        */}
-        <div className="hidden lg:block absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 w-px h-[20%] bg-gradient-to-b from-transparent via-theme-accent/30 to-transparent pointer-events-none z-0"></div>
+        <div className="hidden lg:flex absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 h-[100%] w-[2px] flex-col justify-evenly items-center pointer-events-none z-0">
+          {/* 1. The Faint Thread (Continuous background track) */}
+          <div className="absolute inset-0 w-[1px] mx-auto bg-gradient-to-b from-transparent via-theme-accent-light/20 to-transparent"></div>
 
+          {/* 2. Top Accent Node */}
+          <div className="relative w-[1px] h-[25%] bg-gradient-to-b from-transparent via-theme-accent-light/70 to-transparent blur-[0.5px]"></div>
+
+          {/* 3. Bottom Accent Node */}
+          <div className="relative w-[1px] h-[25%] bg-gradient-to-b from-transparent via-theme-accent-light/70 to-transparent blur-[0.5px]"></div>
+        </div>
         <Stagger className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-20 md:gap-y-28 relative z-10">
           {data.map((item) => (
             <StaggerItem key={item.id} className="h-full w-full">

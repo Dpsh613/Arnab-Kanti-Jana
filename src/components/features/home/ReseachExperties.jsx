@@ -67,15 +67,16 @@ const ResearchExperties = () => {
               >
                 {/* Left Side: Number, Heading & Description */}
                 <div className="lg:col-span-7 flex flex-col justify-center">
-                  <span className="font-mono text-secondary font-fluid-2 font-light mb-2 block">
-                    {item.id}.
-                  </span>
-                  <h3 className="text-secondary text-xl md:text-2xl font-medium tracking-wide mb-6">
-                    {item.title}
-                  </h3>
-                  <p className="text-theme-neutral-light leading-relaxed m-0 text-sm md:text-base">
-                    {item.desc}
-                  </p>
+                  <div className="flex items-baseline gap-3 md:gap-4 mb-6">
+                    <span className="font-mono text-secondary font-fluid-1 font-light shrink-0">
+                      {item.id}.
+                    </span>
+                    <h3 className="text-secondary tracking-wide m-0">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-theme-neutral-light m-0">{item.desc}</p>
                 </div>
 
                 {/* Right Side: Image Component (Uncropped) */}

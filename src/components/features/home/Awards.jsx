@@ -15,7 +15,7 @@ const Awards = () => {
               <div className="absolute left-[9px] top-1.5 w-4 h-4 rounded-full bg-theme-black border-2 border-theme-accent/80 shadow-[0_0_10px_rgba(240,177,0,0.1)] group-hover:bg-theme-accent group-hover:border-theme-accent group-hover:shadow-[0_0_15px_rgba(240,177,0,0.3)] transition-all duration-300"></div>
               {/* AWARD CONTENT */}
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12">
-                <div className="md:wd-32 shrink-0">
+                <div className="md:w-32 shrink-0">
                   <span className="text-sm font-mono font-bold text-secondary tracking-widest">
                     {award.year}
                   </span>

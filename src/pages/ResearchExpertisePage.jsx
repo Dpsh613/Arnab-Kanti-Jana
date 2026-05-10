@@ -23,8 +23,8 @@ const ResearchExpertisePage = () => {
       {/* 1. HERO SECTION */}
       <ResearchHero />
       {/* 2. MAIN CONTENT WRAPPER */}
-      <SectionWrapper className="pb-24 md:pb-32">
-        <div className="space-y-24 md:space-y-32">
+      <SectionWrapper className="pb-12 md:pb-32">
+        <div className="space-y-12 md:space-y-16">
           {/* Standard Grids */}
           <MethodologyGrid
             title="Synthesis"
