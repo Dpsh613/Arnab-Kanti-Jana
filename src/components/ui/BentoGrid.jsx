@@ -36,11 +36,11 @@ export default function BentoGrid() {
           transition={{ duration: 0.8, delay: idx * 0.1 }}
           className={`${item.size} relative group overflow-hidden rounded-xl shadow-2xl`}
         >
-          <div className="absolute inset-0 bg-theme-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <div className="absolute inset-0 bg-theme-black/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
           <img
             src={item.url}
             alt={`Instrument ${idx}`}
-            className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale group-hover:grayscale-0"
+            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale group-hover:grayscale-0"
           />
         </motion.div>
       ))}

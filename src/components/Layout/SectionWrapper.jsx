@@ -11,7 +11,7 @@ const SectionWrapper = ({
       // FIX: Changed 'overflow-hidden' to 'overflow-clip'
       className={`relative w-full bg-theme-black overflow-clip ${
         isHero
-          ? "pt-32 pb-20 min-h-[80vh] md:min-h-screen flex items-center"
+          ? "pt-24 pb-20 min-h-[80vh] md:min-h-screen flex items-center"
           : "py-8 md:py-12"
       } ${className}`}
     >

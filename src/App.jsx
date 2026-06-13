@@ -8,25 +8,23 @@ import ScrollToTop from "./components/Layout/ScrollToTop.jsx";
 import Footer from "./components/Layout/Footer.jsx";
 
 // pages
-import Home from "./pages/Home.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import BeamlinesPage from "./pages/BeamlinesPage";
 import ResearchExpertisePage from "./pages/ResearchExpertisePage.jsx";
 import PublicationsPage from "./pages/PublicationsPage";
 import CollaboratorsPage from "./pages/CollaboratorsPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
-// 1. Create a new component just for your routes
+
 const AnimatedRoutes = () => {
-  const location = useLocation(); // Gets the current URL
+  const location = useLocation();
 
   return (
-    // 2. Wrap Routes in AnimatePresence.
-    // mode="wait" ensures the old page fully fades out BEFORE the new one fades in.
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/beamline" element={<BeamlinesPage />} />
-        <Route path="/researchexpertise" element={<ResearchExpertisePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/research-expertise" element={<ResearchExpertisePage />} />
         <Route path="/publications" element={<PublicationsPage />} />
+        <Route path="/beamlines" element={<BeamlinesPage />} />
         <Route path="/collaborators" element={<CollaboratorsPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
@@ -39,7 +37,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-      <main>
+      <main id="main-content">
         <AnimatedRoutes />
       </main>
       <Footer />

@@ -1,8 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import pageTransition from "../animation/pageTransition";
 import { methodologiesData } from "../constants/researchExpertiesData";
-// Layout Components
 import SectionWrapper from "../components/Layout/SectionWrapper";
 
 // Feature Components
@@ -20,12 +18,9 @@ const ResearchExpertisePage = () => {
       exit="exit"
       className="bg-theme-black min-h-screen relative overflow-hidden"
     >
-      {/* 1. HERO SECTION */}
       <ResearchHero />
-      {/* 2. MAIN CONTENT WRAPPER */}
       <SectionWrapper className="pb-12 md:pb-32">
         <div className="space-y-12 md:space-y-16">
-          {/* Standard Grids */}
           <MethodologyGrid
             title="Synthesis"
             data={methodologiesData.synthesis}
@@ -42,8 +37,6 @@ const ResearchExpertisePage = () => {
             title="Spectroscopy"
             data={methodologiesData.spectroscopy}
           />
-
-          {/* Complex Sections */}
           <MicroscopicProbes data={methodologiesData.microscopicProbes} />
 
           <SoftwareGrid data={methodologiesData.softwares} />

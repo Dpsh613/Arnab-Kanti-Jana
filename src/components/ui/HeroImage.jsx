@@ -6,26 +6,27 @@ import heroImage from "../../assets/images/heroImage.jpg";
 export default function HeroImage() {
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeUpVariant}
-      // FIXED 2: Removed "hidden lg:flex". Replaced with "flex w-full mt-12 lg:mt-0"
-      className="flex lg:col-span-5 justify-center items-center w-full mt-12 lg:mt-0"
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative w-full max-w-[460px]"
     >
-      <div className="relative group">
-        {/* Decorative Border */}
-        <div className="absolute inset-0 border-2 border-theme-accent translate-x-4 translate-y-4 rounded-sm z-0 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+      {/* Glow */}
+      <div className="absolute inset-0 rounded-[2rem] bg-theme-accent/10 blur-3xl" />
 
-        {/* Image Frame - Added mobile-responsive widths/heights so it looks good on all phones */}
-        <div className="relative w-[280px] h-[360px] sm:w-[300px] sm:h-[400px] xl:w-[380px] xl:h-[500px] bg-neutral-900 overflow-hidden rounded-sm z-10 shadow-2xl">
-          <img
-            src={heroImage} // FIXED 1: Replaced "heroImage" with {heroImage}
-            alt="Arnab Kanti Jana"
-            className="w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity group-hover:opacity-100 group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        </div>
+      {/* Image */}
+      <div className="overflow-hidden rounded-[2rem] border border-white/10">
+        <img
+          src="https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+          alt=""
+          className="w-full h-[620px] object-cover"
+        />
+      </div>
+
+      {/* Floating Card */}
+      <div className="absolute bottom-6 left-6 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl p-4">
+        <p className="text-secondary font-mono text-sm">Neutron Scattering</p>
+        <p className="text-white/70 text-xs">Atomic-scale magnetic analysis</p>
       </div>
     </motion.div>
   );

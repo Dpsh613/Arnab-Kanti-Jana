@@ -1,82 +1,140 @@
 import React, { useMemo } from "react";
-import PageHero from "../../Layout/PageHero";
-import HeroImage from "../../ui/HeroImage";
 import { HeroPrimary } from "../../ui/Button";
+import {
+  Magnet,
+  Aperture,
+  Activity,
+  CircleDot,
+  Combine,
+  Zap,
+  ArrowRight,
+} from "lucide-react";
+import PageHero from "../../Layout/PageHero";
+import { FadeUp } from "../../Layout/AnimatedWrapper";
 import { heroData } from "../../../constants/homeData";
 import { pubData } from "../../../constants/publicationsData";
 import { beamlineData } from "../../../constants/beamlineData";
-import bgImg from "../../../assets/images/img1.jpg";
+
+// Make sure to import your landscape 3D background image
+import bgImg from "../../../assets/images/test3.png";
+
+const getIcon = (id) => {
+  const props = { size: 16, strokeWidth: 1.5 }; // slightly smaller icons
+  switch (id) {
+    case "magnetism":
+      return <Magnet {...props} />;
+    case "xrd":
+      return <Aperture {...props} />;
+    case "spectroscopy":
+      return <Activity {...props} />;
+    case "neutron":
+      return <CircleDot {...props} />;
+    case "muon":
+      return <Combine {...props} />;
+    case "synchrotron":
+      return <Zap {...props} />;
+    default:
+      return <Activity {...props} />;
+  }
+};
 
 const HomeHero = () => {
-  // Dynamically calculate proposals and days awarded
   const { totalProposals, totalDays } = useMemo(() => {
     let proposals = 0;
     let days = 0;
-
     beamlineData.forEach((facility) => {
       facility.instruments?.forEach((instrument) => {
         instrument.proposals?.forEach((proposal) => {
           proposals++;
           const awardedDays = parseFloat(proposal.awarded);
-          if (!isNaN(awardedDays)) {
-            days += awardedDays;
-          }
+          if (!isNaN(awardedDays)) days += awardedDays;
         });
       });
     });
-
     return { totalProposals: proposals, totalDays: days };
   }, []);
 
   const HomeExtraContent = (
-    <>
-      {/* 
-        FIXED: Changed container to grid on mobile (grid-cols-2) and flex on larger screens (sm:flex).
-        This forces a 2x2 grid on mobile, and restores your justify-around line on tablet/desktop. 
-      */}
-      <div className="grid grid-cols-2 sm:flex sm:flex-row justify-around items-center gap-y-8 gap-x-2 sm:gap-4 lg:gap-6 mt-6 border-b border-theme-neutral-muted pb-6 w-full">
-        {/* Stat 1: Publications (Takes 1 column on mobile) */}
-        <div className="flex flex-col items-center text-center w-full sm:w-fit">
-          <h3 className="text-secondary font-mono mb-1">
-            {pubData?.length || 0}
-          </h3>
-          <h4 className="text-white/80 font-light text-center">Publications</h4>
-        </div>
-
-        {/* Stat 2: Accepted Proposals (Takes 1 column on mobile) */}
-        <div className="flex flex-col items-center text-center w-full sm:w-fit">
-          <h3 className="text-secondary font-mono mb-1">{totalProposals}</h3>
-          <h4 className="text-white/80 font-light text-center">
-            Accepted Proposals
-          </h4>
-        </div>
-
-        {/* Stat 3: Allocated Beam Days 
-            FIXED: col-span-2 forces it to take up the whole second row on mobile, 
-            centering it beautifully under the top two! 
-        */}
-        <div className="flex flex-col items-center text-center col-span-2 sm:col-span-1 w-full sm:w-fit">
-          <h3 className="text-secondary font-mono mb-1">{totalDays}</h3>
-          <h4 className="text-white/80 font-light text-center">
-            Beamdays Awarded
-          </h4>
+    <div className="flex flex-col w-full">
+      {/* Research Interests Grid - Tightened margins and gap */}
+      <div className="mb-4 w-full">
+        <h4 className="text-secondary tracking-[0.15em] font-light font-sans mb-3">
+          Research Interests -
+        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6">
+          {heroData.researchInterests.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center gap-2 text-white/90 text-sm font-light tracking-wide"
+            >
+              {/* Forced gold color for icons so they definitely show up */}
+              <span className="text-[#fdc700]">{getIcon(item.id)}</span>
+              {item.text}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Button also centered on mobile for better balance with the grid above it */}
+      <div className="w-full max-w-xl h-px bg-white/10 mb-5"></div>
+
+      {/* Stats Grid - Tightened margins */}
+      <div className="flex flex-wrap sm:flex-nowrap items-center gap-y-4 mb-2 max-w-xl">
+        <div className="w-1/2 sm:w-auto sm:pr-8 text-left">
+          <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
+            {pubData?.length || 0}
+          </div>
+          <div className="text-xs sm:text-sm text-white/60 font-sans tracking-wider uppercase">
+            Publications
+          </div>
+        </div>
+        <div className="w-1/2 sm:w-auto sm:px-8 text-left sm:border-l sm:border-white/10">
+          <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
+            {totalProposals}
+          </div>
+          <div className="text-xs sm:text-sm text-white font-sans tracking-wider uppercase">
+            Accepted Proposals
+          </div>
+        </div>
+        <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 sm:border-l border-white/10 sm:pl-8 text-left">
+          <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
+            {totalDays}
+          </div>
+          <div className="text-xs sm:text-sm text-white font-sans tracking-wider uppercase">
+            Beamdays Awarded
+          </div>
+        </div>
+      </div>
+
+      {/* FIXED BUTTON: Replaced tailwind class with hardcoded hex background so it stands out bright gold instead of black-on-black */}
       <div className="pt-6 flex justify-center md:justify-start w-full">
         <HeroPrimary to="/publications">All Publications</HeroPrimary>
       </div>
-    </>
+    </div>
+  );
+
+  // FIXED QUOTE: Removed fixed h-[400px] which was forcing the screen to be too tall.
+  // Changed background blur box to be lighter and more readable.
+  const QuoteOverlay = (
+    <div className="hidden lg:flex flex-col justify-end w-full max-w-sm relative self-end pb-8">
+      <FadeUp className="relative">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-sm -z-10 -m-5 border border-white/10"></div>
+        <span className="text-[4rem] font-heading text-secondary leading-none absolute -top-6 -left-4 opacity-40">
+          "
+        </span>
+        <p className="text-white/90 font-light font-heading italic leading-relaxed mb-4 relative z-10">
+          {heroData.quote}
+        </p>
+        <div className="w-10 h-px bg-[#cfa35f]/50"></div>
+      </FadeUp>
+    </div>
   );
 
   return (
     <PageHero
       data={heroData}
       bgImage={bgImg}
-      rightContent={<HeroImage />}
       extraLeftContent={HomeExtraContent}
-      overlayClass="bg-theme-black/80"
+      rightContent={QuoteOverlay}
     />
   );
 };

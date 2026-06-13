@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arnab-kanti-jana.vercel.app/sitemap.xml

@@ -6,9 +6,9 @@ import { useLocation, Link } from "react-router-dom";
 
 const pageLinks = [
   { name: "Home", path: "/" },
-  { name: "Research", path: "/researchexpertise" },
+  { name: "Research", path: "/research-expertise" },
   { name: "Publications", path: "/publications" },
-  { name: "Beamlines", path: "/beamline" },
+  { name: "Beamlines", path: "/beamlines" },
   { name: "Collaborators", path: "/collaborators" },
   { name: "About Me", path: "/about" },
 ];
@@ -56,8 +56,8 @@ const Header = () => {
       variants={staggerContainer}
       className={`fixed top-0 w-full px-8 md:px-16 z-50 transition-all duration-300 ${
         isScrolled
-          ? "py-4 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg"
-          : "py-6 bg-transparent border-b border-transparent"
+          ? "py-4 bg-theme-black backdrop-blur-md shadow-lg"
+          : "py-6 bg-transparent backdrop-blur-md shadow-lg"
       }`}
     >
       <motion.div

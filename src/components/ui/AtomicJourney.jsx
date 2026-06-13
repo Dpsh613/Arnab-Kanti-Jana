@@ -28,17 +28,11 @@ const AtomicJourney = () => {
     <div className="relative w-[350px] h-[350px] flex items-center justify-center">
       {/* --- CENTRAL CORE (Nucleus) --- */}
       <div className="absolute z-30 flex items-center justify-center">
-        {/* Outer subtle pulse */}
-        <motion.div
-          animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0.1, 0.3] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="absolute w-8 h-8 bg-theme-accent rounded-full blur-md"
-        />
         {/* Inner solid core */}
         <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.1, 0.3] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="relative w-3 h-3 bg-theme-accent rounded-full shadow-[0_0_15px_rgba(250,250,51,1)]"
+          className="relative w-3 h-3 bg-theme-accent rounded-full ]"
         />
       </div>
 
@@ -52,11 +46,11 @@ const AtomicJourney = () => {
           <div key={year} className="absolute flex items-center justify-center">
             {/* 1. THE STATIC RING & YEAR LABEL (Does NOT spin) */}
             <div
-              className="absolute rounded-full border border-theme-neutral-muted/30 border-dashed z-10"
+              className="absolute rounded-full border border-yellow-900 z-10"
               style={{ width: radius * 2, height: radius * 2 }}
             >
               {/* Clean, background-less text positioned just inside the top rim */}
-              <span className="absolute top-1 left-1/2 -translate-x-1/2 text-[10px] text-theme-neutral-light/70 font-mono tracking-widest">
+              <span className="absolute top-1 left-1/2 -translate-x-1/2 text-xs text-theme-heading font-mono tracking-widest">
                 {year}
               </span>
             </div>
@@ -78,7 +72,7 @@ const AtomicJourney = () => {
                 return (
                   <div
                     key={pub.id}
-                    className="absolute left-1/2 top-1/2 pointer-events-auto"
+                    className="absolute left-[40] top-[40] pointer-events-auto"
                     style={{
                       // Positions the dot exactly on the ring based on its date
                       transform: `rotate(${angle}deg) translateX(${radius}px)`,
@@ -98,7 +92,7 @@ const AtomicJourney = () => {
                       className="relative flex items-center justify-center group"
                     >
                       {/* The Publication Dot */}
-                      <div className="w-2.5 h-2.5 bg-theme-accent rounded-full shadow-[0_0_8px_rgba(250,250,51,0.8)] cursor-pointer group-hover:scale-150 group-hover:bg-white transition-all duration-300" />
+                      <div className="w-3 h-3 bg-yellow-300 rounded-full cursor-pointer group-hover:scale-150 group-hover:bg-white transition-all duration-300" />
                     </motion.div>
                   </div>
                 );

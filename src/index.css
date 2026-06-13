@@ -3,14 +3,17 @@
 @theme {
   /* Colors */
   /* BLACK - main background color*/
-  --color-theme-black: #000;
-
-  /* WHITE */
+  --color-theme-black: #000; /* Deep, rich charcoal/black */
   --color-theme-heading: #ffffff;
+
+  /* textt */
+  --color-theme-gold: #fdc700;
+  --color-theme-gold-muted: #fafa33;
+  --color-theme-gold-light: #e6c587;
 
   /* CANT REMEMBER - BUT ZINC BORDERS AND MUTED TEXTS */
   --color-theme-neutral-dark: #171717;
-  --color-theme-neutral-muted: #525252;
+  --color-theme-neutral-muted: #a3a3a3;
   --color-theme-neutral-light: #a1a1a1;
   /* 
   /* NEED TO DELETE THIS BUT I AM USING SO REFACTOR  */
@@ -70,7 +73,7 @@
 
 @layer base {
   body {
-    @apply bg-theme-black font-body selection:bg-theme-accent/30 selection:text-theme-accent;
+    @apply bg-theme-black font-body text-theme-gold-muted selection:bg-theme-accent/30 selection:text-theme-accent;
     overflow-x: hidden;
   }
   h1 {

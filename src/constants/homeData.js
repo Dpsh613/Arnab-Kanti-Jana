@@ -2,5 +2,15 @@ export const heroData = {
   subtitle: "Doctoral Researcher",
   title: "Arnab Kanti",
   highlight: "Jana",
-  desc: "My experimental approach is designed to bridge the gap between macroscopic phenomena and their microscopic origins. To address fundamental questions in magnetism, I integrate lab-based synthesis and characterization, from XRD and magnetometry to spectroscopy, with advanced probes such as neutron, muon, and synchrotron facilities. To build a cohesive understanding from the bulk material down to the atomic scale.",
+  field: "Experimental Condensed Matter Physics",
+  desc: "Investigating magnetic phenomena through advanced characterization techniques and large-scale research facilities.",
+  researchInterests: [
+    { id: "magnetism", text: "Magnetism" },
+    { id: "xrd", text: "XRD Characterization" },
+    { id: "spectroscopy", text: "Spectroscopy" },
+    { id: "neutron", text: "Neutron Scattering" },
+    { id: "muon", text: "Muon Studies" },
+    { id: "synchrotron", text: "Synchrotron Techniques" },
+  ],
+  quote: "Exploring the interplay between structure, magnetism and dynamics in complex quantum materials.",
 };
