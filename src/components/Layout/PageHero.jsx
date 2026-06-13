@@ -24,7 +24,7 @@ const PageHero = ({
   return (
     <SectionWrapper isHero={true} backgroundContent={HeroBackground}>
       {/* Reduced py-2 to eliminate unnecessary vertical padding */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-12 items-center relative z-10">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
         <Stagger
           className={`${leftCol} flex flex-col justify-center min-w-0 w-full overflow-hidden`}
         >
