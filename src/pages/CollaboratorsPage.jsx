@@ -8,7 +8,6 @@ import PageHero from "../components/Layout/PageHero";
 import SectionWrapper from "../components/Layout/SectionWrapper";
 import CollaboratorHero from "../components/features/collab/CollaboratorHero";
 import CollaboratorRegion from "../components/features/collab/CollaboratorRegion";
-import GlobalNetwork from "../components/ui/GlobalNetwork";
 import { Globe2, MapPin } from "lucide-react";
 
 // Filter data

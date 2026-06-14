@@ -67,15 +67,16 @@ const HomeHero = () => {
               key={item.id}
               className="flex items-center gap-2 text-white/90 text-sm font-light tracking-wide"
             >
-              {/* Forced gold color for icons so they definitely show up */}
-              <span className="text-[#fdc700]">{getIcon(item.id)}</span>
+              <span className="text-theme-accent-light">
+                {getIcon(item.id)}
+              </span>
               {item.text}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="w-full max-w-xl h-px bg-white/10 mb-5"></div>
+      <div className="w-full max-w-xl h-px bg-theme-heading/10 mb-5"></div>
 
       {/* Stats Grid - Tightened margins */}
       <div className="flex flex-wrap sm:flex-nowrap items-center gap-y-4 mb-2 max-w-xl">
@@ -83,29 +84,28 @@ const HomeHero = () => {
           <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
             {pubData?.length || 0}
           </div>
-          <div className="text-xs sm:text-sm text-white/60 font-sans tracking-wider uppercase">
+          <div className="text-xs sm:text-sm text-theme-heading font-sans tracking-wider uppercase">
             Publications
           </div>
         </div>
-        <div className="w-1/2 sm:w-auto sm:px-8 text-left sm:border-l sm:border-white/10">
+        <div className="w-1/2 sm:w-auto sm:px-8 text-left sm:border-l sm:border-theme-heading">
           <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
             {totalProposals}
           </div>
-          <div className="text-xs sm:text-sm text-white font-sans tracking-wider uppercase">
+          <div className="text-xs sm:text-sm text-theme-heading font-sans tracking-wider uppercase">
             Accepted Proposals
           </div>
         </div>
-        <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 sm:border-l border-white/10 sm:pl-8 text-left">
+        <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 sm:border-l border-theme-heading sm:pl-8 text-left">
           <div className="text-3xl lg:text-4xl font-heading text-secondary mb-2">
             {totalDays}
           </div>
-          <div className="text-xs sm:text-sm text-white font-sans tracking-wider uppercase">
+          <div className="text-xs sm:text-sm text-theme-heading font-sans tracking-wider uppercase">
             Beamdays Awarded
           </div>
         </div>
       </div>
 
-      {/* FIXED BUTTON: Replaced tailwind class with hardcoded hex background so it stands out bright gold instead of black-on-black */}
       <div className="pt-6 flex justify-center md:justify-start w-full">
         <HeroPrimary to="/publications">All Publications</HeroPrimary>
       </div>

@@ -72,7 +72,7 @@ const Header = () => {
         </Link>
         <nav className="hidden xl:flex gap-10 relative">
           <div
-            className="absolute bottom-[-8px] h-[2px] bg-yellow-400 transition-all duration-500 ease-in-out"
+            className="absolute bottom-[-8px] h-[2px] bg-theme-accent-light transition-all duration-500 ease-in-out"
             style={{
               left: `${lineStyle.left}px`,
               width: `${lineStyle.width}px`,
@@ -134,8 +134,8 @@ const Header = () => {
             onClick={() => setIsMobileOpen(false)}
             className={`text-sm sm:text-base font-medium uppercase tracking-widest transition-all duration-300 ${
               location.pathname === link.path
-                ? "text-yellow-400 translate-x-2"
-                : "text-neutral-400 hover:text-white"
+                ? "text-theme-light translate-x-2"
+                : "text-theme-neutral-light hover:text-white"
             }`}
           >
             {link.name}

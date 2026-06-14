@@ -39,12 +39,12 @@ const connectLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black pt-20 pb-8 px-6 md:px-12 lg:px-20 border-t border-neutral-900 overflow-hidden">
+    <footer className="bg-theme-black pt-20 pb-8 px-6 md:px-12 lg:px-20 border-t border-theme-neutral-dark overflow-hidden">
       {/* Top Section - Stack vertically on mobile, side-by-side on medium+ screens */}
-      <div className="flex flex-col md:flex-row justify-between border-b border-neutral-900 pb-10 gap-10 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between border-b border-theme-neutral-dark pb-10 gap-10 md:gap-0">
         {/* Brand/Logo Section */}
         <div className="flex flex-col justify-start">
-          <h3 className="text-3xl tracking-[0.15em] text-white mb-3 font-semibold">
+          <h3 className="text-3xl tracking-[0.15em] text-theme-heading mb-3 font-semibold">
             A.K.
             <span className="text-secondary"> JANA</span>
           </h3>
@@ -67,7 +67,7 @@ const Footer = () => {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className="flex items-center gap-3 text-neutral-400 text-sm hover:text-yellow-400 transition-all duration-300 group w-fit"
+                    className="flex items-center gap-3 text-theme-neutral-muted text-sm hover:text-theme-accent-light transition-all duration-300 group w-fit"
                   >
                     <Icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                     <span>{link.name}</span>
@@ -89,7 +89,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-neutral-400 text-sm hover:text-yellow-400 transition-all duration-300 group w-fit"
+                  className="flex items-center gap-3 text-theme-neutral-light text-sm hover:text-theme-accent-light transition-all duration-300 group w-fit"
                 >
                   {/* Custom Image Wrapper */}
                   <div className="w-5 h-5 flex items-center justify-center opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
@@ -108,25 +108,15 @@ const Footer = () => {
       </div>
 
       {/* Bottom Copyright Section */}
-      <div className="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-neutral-100 text-xs tracking-wider">
+      <div className="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-theme-neutral-light text-xs tracking-wider">
         <p>
           © {new Date().getFullYear()}
           <span className="text-secondary font-medium"> A.K. Jana</span> All
           rights reserved.
         </p>
-        <p className="text-left md:text-right font-light text-sm text-neutral-400">
+        <p className="text-left md:text-right font-light text-sm text-theme-neutral-light">
           Built by{" "}
-          <a
-            href="https://github.com/Dpsh613"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary relative inline-block opacity-80 hover:opacity-100 transition-opacity duration-300
-               after:absolute after:left-0 after:-bottom-0.5 after:h-[1px] after:w-0
-               after:bg-current after:transition-all after:duration-300
-               hover:after:w-full"
-          >
-            Deepika Sharma
-          </a>
+          <span className="text-secondary font-light font-sm">D.S</span>
         </p>
       </div>
     </footer>

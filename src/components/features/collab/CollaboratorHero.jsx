@@ -1,6 +1,6 @@
 import React from "react";
 import PageHero from "../../Layout/PageHero";
-import GlobalNetwork from "../../ui/GlobalNetwork";
+
 import { heroData } from "../../../constants/collaboratorsData";
 import bgImg from "../../../assets/images/lattice.png";
 

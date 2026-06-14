@@ -11,8 +11,8 @@ export default function PublicationHero() {
       bgImage={bgImg}
       rightContent={<AtomicJourney />}
       // Fixed: Added md:col-span-6
-      leftCol="md:col-span-6 lg:col-span-5"
-      rightCol="md:col-span-6 lg:col-span-7"
+      leftCol="md:col-span-4 lg:col-span-5"
+      rightCol="md:col-span-8 lg:col-span-7"
     />
   );
 }

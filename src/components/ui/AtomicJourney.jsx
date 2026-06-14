@@ -72,10 +72,10 @@ const AtomicJourney = () => {
                 return (
                   <div
                     key={pub.id}
-                    className="absolute left-[40] top-[40] pointer-events-auto"
+                    // here --
+                    className="absolute left-1/2 top-1/2"
                     style={{
-                      // Positions the dot exactly on the ring based on its date
-                      transform: `rotate(${angle}deg) translateX(${radius}px)`,
+                      transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(${radius}px)`,
                     }}
                   >
                     {/* 

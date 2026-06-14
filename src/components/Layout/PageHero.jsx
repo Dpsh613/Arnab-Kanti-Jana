@@ -28,8 +28,8 @@ const PageHero = ({
         <Stagger
           className={`${leftCol} flex flex-col justify-center min-w-0 w-full overflow-hidden`}
         >
-          <StaggerItem className="flex items-center mb-1">
-            <span className="w-6 h-px bg-theme-accent shrink-0"></span>
+          <StaggerItem className="flex items-center mb-2">
+            <span className="w-10 h-px bg-theme-accent-light shrink-0"></span>
             <span className="text-secondary uppercase tracking-[0.2em] text-xs ml-2 font-bold font-mono shrink-0">
               {data.subtitle}
             </span>
@@ -37,7 +37,7 @@ const PageHero = ({
 
           <StaggerItem className="w-full">
             {/* Reduced from 5rem to 4rem to save vertical space */}
-            <h1 className="mb-4 text-gray-300 text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-heading drop-shadow-md">
+            <h1 className="mb-4 text-theme-heading text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-heading drop-shadow-md">
               {data.title}{" "}
               <span className="inline-block font-medium text-secondary transition-all duration-300">
                 {data.highlight}
@@ -55,10 +55,10 @@ const PageHero = ({
           )}
 
           {data.desc && (
-            <StaggerItem className="w-full">
-              <div className="w-12 h-px bg-secondary/40 my-2 hidden md:block"></div>
+            <StaggerItem className="w-full mb-4">
+              <div className="w-12 h-px hidden md:block"></div>
               {/* Tightened line-height and text size */}
-              <p className="max-w-xl text-[#d1d5db] font-sans text-sm md:text-base leading-snug break-words">
+              <p className="max-w-xl text-theme-heading font-sans text-sm md:text-base leading-snug break-words">
                 {data.desc}
               </p>
             </StaggerItem>
@@ -72,7 +72,7 @@ const PageHero = ({
         </Stagger>
 
         <div
-          className={`${rightCol} flex justify-center md:justify-end items-end w-full min-w-0 h-full`}
+          className={`${rightCol} flex justify-center md:justify-center items-end w-full min-w-0 h-full`}
         >
           {rightContent}
         </div>

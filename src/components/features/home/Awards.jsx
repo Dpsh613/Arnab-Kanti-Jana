@@ -26,10 +26,7 @@ const Awards = () => {
                     <h3 className="tracking-wider leading-snug">
                       {award.title}
                     </h3>
-                    <span
-                      span
-                      className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 bg-theme-black text-secondary rounded border border-theme-accent"
-                    >
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 bg-theme-black text-secondary rounded border border-theme-accent">
                       {award.type}
                     </span>
                   </div>

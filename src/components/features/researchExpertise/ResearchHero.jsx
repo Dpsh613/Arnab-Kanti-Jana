@@ -1,6 +1,5 @@
 import React from "react";
 import PageHero from "../../Layout/PageHero";
-import ExpertiseGraphic from "../../ui/ExpertiseGraphic";
 import { heroData } from "../../../constants/researchExpertiesData";
 import bgImg from "../../../assets/images/plains.png";
 

@@ -2,24 +2,14 @@
 
 @theme {
   /* Colors */
-  /* BLACK - main background color*/
-  --color-theme-black: #000; /* Deep, rich charcoal/black */
+  --color-theme-black: #000;
   --color-theme-heading: #ffffff;
-
-  /* textt */
-  --color-theme-gold: #fdc700;
-  --color-theme-gold-muted: #fafa33;
-  --color-theme-gold-light: #e6c587;
-
-  /* CANT REMEMBER - BUT ZINC BORDERS AND MUTED TEXTS */
+  /* borders */
   --color-theme-neutral-dark: #171717;
   --color-theme-neutral-muted: #a3a3a3;
   --color-theme-neutral-light: #a1a1a1;
-  /* 
-  /* NEED TO DELETE THIS BUT I AM USING SO REFACTOR  */
-  /* --color-theme-text: #cbbbbeff;  */
-
-  /* YELLOW - SECONDARY COLOR AND ITS DARK GRADIENT */
+  /* accents */
+  --color-theme-accent-light: #fdc700;
   --background-image-text-secondary: linear-gradient(
     to right,
     var(--color-yellow-400),
@@ -31,49 +21,22 @@
     var(--color-yellow-900)
   );
 
-  /* yellow-500 for border/highlights */
-  --color-theme-accent: #fafa33;
-  --color-theme-accent-light: #fdc700;
-
-  /* ALL COLOR PROPERTIES FROM HERE IT NEEDS TO BE REPLACED */
-  /* --background-image-heading-gradient: linear-gradient(
-    to right,
-    var(--color-yellow-400),
-    var(--color-yellow-700)
-  );
-  --background-image-heading-gradient-hover: linear-gradient(
-    to right,
-    var(--color-yellow-600),
-    var(--color-yellow-900)
-  );
-  --color-theme-accent-hover: #fef08a; */
-
   /* Fonts */
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
-  /* for numbers */
   --font-mono: "Space Mono", monospace;
 
   /* Fluid Typography */
-  /* H1: Hero/Main Title */
   --text-fluid-1: clamp(2rem, 4vw, 3.5rem);
-
-  /* H2: Section Headers */
   --text-fluid-2: clamp(1.5rem, 3vw, 2rem);
-
-  /* H3: Sub-headers / Card Titles */
   --text-fluid-3: clamp(1.15rem, 2vw, 1.5rem);
-
-  /* Body Text: High readability */
   --text-fluid-4: clamp(1rem, 1.5vw, 1.15rem);
-
-  /* body font */
   --text-fluid-p: clamp(0.95rem, 1.1vw, 1.05rem);
 }
 
 @layer base {
   body {
-    @apply bg-theme-black font-body text-theme-gold-muted selection:bg-theme-accent/30 selection:text-theme-accent;
+    @apply bg-theme-black font-body text-theme-accent-light selection:bg-theme-accent-light/30 selection:text-theme-accent-light;
     overflow-x: hidden;
   }
   h1 {
