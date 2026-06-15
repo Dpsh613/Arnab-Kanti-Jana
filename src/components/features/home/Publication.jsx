@@ -60,8 +60,9 @@ const Publication = () => {
                   href={pubData[currentIndex].link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Read paper: ${pubData[currentIndex].title}`}
                 >
-                  Read More
+                  Read Paper
                 </MonoLink>
               </div>
             </div>
