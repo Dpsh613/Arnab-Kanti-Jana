@@ -2,7 +2,7 @@ import React from "react";
 import PageHero from "../../Layout/PageHero";
 import AtomicJourney from "../../ui/AtomicJourney";
 import { heroData } from "../../../constants/publicationsData";
-import bgImg from "../../../assets/images/test7.png";
+import bgImg from "../../../assets/images/img3.png";
 
 export default function PublicationHero() {
   return (

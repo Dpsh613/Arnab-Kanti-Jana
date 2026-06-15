@@ -7,17 +7,22 @@ const PageHero = ({
   bgImage,
   rightContent,
   extraLeftContent,
+  overlayClass = "bg-theme-black/60",
   leftCol = "md:col-span-6 lg:col-span-7",
   rightCol = "md:col-span-6 lg:col-span-5",
 }) => {
   const HeroBackground = (
     <>
       {bgImage && (
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${bgImage})` }}
+        <img
+          src={bgImage}
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
       )}
+      <div className={`absolute inset-0 ${overlayClass} z-0`} />
     </>
   );
 

@@ -2,7 +2,7 @@ import React from "react";
 import PageHero from "../../Layout/PageHero";
 
 import { heroData } from "../../../constants/collaboratorsData";
-import bgImg from "../../../assets/images/lattice.png";
+import bgImg from "../../../assets/images/img5.png";
 
 export default function CollaboratorHero() {
   return (

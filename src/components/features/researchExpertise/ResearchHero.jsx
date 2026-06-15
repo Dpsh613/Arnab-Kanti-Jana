@@ -1,7 +1,7 @@
 import React from "react";
 import PageHero from "../../Layout/PageHero";
 import { heroData } from "../../../constants/researchExpertiesData";
-import bgImg from "../../../assets/images/plains.png";
+import bgImg from "../../../assets/images/img2.png";
 
 export default function ResearchHero() {
   return (

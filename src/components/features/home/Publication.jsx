@@ -68,8 +68,13 @@ const Publication = () => {
 
             <div className="bg-theme-black relative flex items-center p-6 justify-center overflow-hidden w-full h-full">
               <img
-                src={pubData[currentIndex]?.graph?.summary?.img}
+                src={pubData[currentIndex]?.graph?.summary?.img?.replace(
+                  "/upload/",
+                  "/upload/f_auto,q_auto,w_1000/",
+                )}
                 alt={pubData[currentIndex]?.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full max-h-[400px] md:max-h-[550px] object-contain group-hover:scale-95 transition-transform duration-500"
               />
             </div>

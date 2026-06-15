@@ -16,7 +16,7 @@ import { pubData } from "../../../constants/publicationsData";
 import { beamlineData } from "../../../constants/beamlineData";
 
 // Make sure to import your landscape 3D background image
-import bgImg from "../../../assets/images/test3.png";
+import bgImg from "../../../assets/images/img1.png";
 
 const getIcon = (id) => {
   const props = { size: 16, strokeWidth: 1.5 }; // slightly smaller icons

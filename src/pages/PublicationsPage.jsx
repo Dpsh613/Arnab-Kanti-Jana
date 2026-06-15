@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import pageTransition from "../animation/pageTransition";
 import { pubData, heroData } from "../constants/publicationsData";
+import SEO from "../components/seo/SEO";
 
 // Components
 import PageHero from "../components/Layout/PageHero";
@@ -24,27 +25,34 @@ const PublicationsPage = () => {
   }, []);
 
   return (
-    <motion.section
-      variants={pageTransition}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="bg-theme-black min-h-screen relative"
-    >
-      {/* 1. Hero Section */}
-      <PublicationHero />
+    <>
+      <SEO
+        title="Publications & Scientific Output | Arnab Kanti Jana"
+        description="Peer-reviewed publications on frustrated magnetism, quantum materials, superconductivity, spin dynamics, honeycomb oxides and strongly correlated electron systems."
+        url="https://arnab-kanti-jana.vercel.app/publications"
+      />
+      <motion.section
+        variants={pageTransition}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="bg-theme-black min-h-screen relative"
+      >
+        {/* 1. Hero Section */}
+        <PublicationHero />
 
-      {/* 2. Dynamic Publications List */}
-      <SectionWrapper className="pb-32">
-        {sortedYears.map((year) => (
-          <PublicationYearGroup
-            key={year}
-            year={year}
-            publications={groupedPublications[year]}
-          />
-        ))}
-      </SectionWrapper>
-    </motion.section>
+        {/* 2. Dynamic Publications List */}
+        <SectionWrapper className="pb-32">
+          {sortedYears.map((year) => (
+            <PublicationYearGroup
+              key={year}
+              year={year}
+              publications={groupedPublications[year]}
+            />
+          ))}
+        </SectionWrapper>
+      </motion.section>
+    </>
   );
 };
 

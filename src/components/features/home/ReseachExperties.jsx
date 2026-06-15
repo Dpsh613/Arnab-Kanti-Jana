@@ -83,9 +83,14 @@ const ResearchExperties = () => {
                 <div className="lg:col-span-5 w-full">
                   <div className="w-full p-2 group overflow-hidden flex justify-center items-center">
                     <img
-                      src={item.img}
+                      src={item.img.replace(
+                        "/upload/",
+                        "/upload/f_auto,q_auto,w_700/",
+                      )}
                       alt={item.title}
                       className="w-full max-h-[350px] object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>

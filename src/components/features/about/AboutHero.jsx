@@ -1,7 +1,7 @@
 import React from "react";
 import PageHero from "../../Layout/PageHero";
 import { heroData } from "../../../constants/aboutData";
-import bgImg from "../../../assets/images/test4.png";
+import bgImg from "../../../assets/images/img6.png";
 
 export default function AboutHero() {
   return (

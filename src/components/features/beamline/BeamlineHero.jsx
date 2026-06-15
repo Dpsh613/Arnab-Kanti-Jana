@@ -2,7 +2,7 @@ import React from "react";
 import PageHero from "../../Layout/PageHero";
 import BentoGrid from "../../ui/BentoGrid";
 import { heroData } from "../../../constants/beamlineData";
-import bgImg from "../../../assets/images/test3.png";
+import bgImg from "../../../assets/images/img4.png";
 
 export default function BeamlineHero() {
   return (
