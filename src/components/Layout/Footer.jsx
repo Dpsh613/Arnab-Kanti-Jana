@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
-import { Microscope, BookOpen, Activity, Users, User } from "lucide-react";
+import {
+  HomeIcon,
+  Microscope,
+  BookOpen,
+  Activity,
+  Users,
+  User,
+  Shield,
+} from "lucide-react";
 
 // 1. Array for internal Directory links mapped to your routes
 const directoryLinks = [
-  { name: "Research", path: "/researchexpertise", icon: Microscope },
+  { name: "Home", path: "/", icon: HomeIcon },
+  { name: "Research", path: "/research-expertise", icon: Microscope },
   { name: "Publications", path: "/publications", icon: BookOpen },
   { name: "Beamlines", path: "/beamline", icon: Activity },
   { name: "Collaborators", path: "/collaborators", icon: Users },
   { name: "About Me", path: "/about", icon: User },
+  { name: "Privacy Policy", path: "/privacy-policy", icon: Shield },
 ];
 
 // 2. Array for external Connect links using your custom images

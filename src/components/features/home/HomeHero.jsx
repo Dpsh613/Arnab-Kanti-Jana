@@ -2,12 +2,15 @@ import React, { useMemo } from "react";
 import { HeroPrimary } from "../../ui/Button";
 import {
   Magnet,
-  Aperture,
+  Layers2,
+  Orbit,
+  Hexagon,
+  Compass,
   Activity,
-  CircleDot,
-  Combine,
-  Zap,
-  ArrowRight,
+  Network,
+  Waves,
+  Sparkles,
+  GitBranch,
 } from "lucide-react";
 import PageHero from "../../Layout/PageHero";
 import { FadeUp } from "../../Layout/AnimatedWrapper";
@@ -21,20 +24,26 @@ import bgImg from "../../../assets/images/img1.png";
 const getIcon = (id) => {
   const props = { size: 16, strokeWidth: 1.5 }; // slightly smaller icons
   switch (id) {
-    case "magnetism":
-      return <Magnet {...props} />;
-    case "xrd":
-      return <Aperture {...props} />;
-    case "spectroscopy":
+    case "Materials":
+      return <Layers2 {...props} />;
+    case "Electron":
+      return <Orbit {...props} />;
+    case "Magnetic":
+      return <Hexagon {...props} />;
+    case "Anisotropy":
+      return <Compass {...props} />;
+    case "Dynamics":
       return <Activity {...props} />;
-    case "neutron":
-      return <CircleDot {...props} />;
-    case "muon":
-      return <Combine {...props} />;
-    case "synchrotron":
-      return <Zap {...props} />;
+    case "Structure":
+      return <Network {...props} />;
+    case "Quantum":
+      return <Waves {...props} />;
+    case "Formation":
+      return <Sparkles {...props} />;
+    case "Lattice":
+      return <GitBranch {...props} />;
     default:
-      return <Activity {...props} />;
+      return <Magnet {...props} />;
   }
 };
 
@@ -114,27 +123,12 @@ const HomeHero = () => {
 
   // FIXED QUOTE: Removed fixed h-[400px] which was forcing the screen to be too tall.
   // Changed background blur box to be lighter and more readable.
-  const QuoteOverlay = (
-    <div className="hidden lg:flex flex-col justify-end w-full max-w-sm relative self-end pb-8">
-      <FadeUp className="relative">
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-sm -z-10 -m-5 border border-white/10"></div>
-        <span className="text-[4rem] font-heading text-secondary leading-none absolute -top-6 -left-4 opacity-40">
-          "
-        </span>
-        <p className="text-white/90 font-light font-heading italic leading-relaxed mb-4 relative z-10">
-          {heroData.quote}
-        </p>
-        <div className="w-10 h-px bg-[#cfa35f]/50"></div>
-      </FadeUp>
-    </div>
-  );
 
   return (
     <PageHero
       data={heroData}
       bgImage={bgImg}
       extraLeftContent={HomeExtraContent}
-      rightContent={QuoteOverlay}
     />
   );
 };
